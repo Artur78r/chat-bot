@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat</title>
+    <link rel="stylesheet" href="style/style.css">
+    <script src="script/main.js"></script>
+</head>
+
+<body>
+    <main class="window-chat">
+        <div class="chat-container">
+            <div class="chat-container__bot">
+                <div class="chat-container__bot-title">
+                    <h2 class="bot-title__title">Bot chat</h2>
+                </div>
+                <div class="chat-container__bot-menu">
+                    <div class="bot-menu__gigachad">
+                        <div class="gigachad__checkbox">
+                            <input class="checkbox-check" id="bot-switch" type="checkbox" unchecked>
+                        </div>
+                        <div class="gigachad__img">
+                            <img class="img__gigachad" src="img/Gigachad.jpg">
+                        </div>
+                        <div class="gigachad__name">
+                            <h3 class="name-Gigachad">Gigachad</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="chat-container__user">
+                <div class="chat-container__user-heder">
+                    <div class="user-heder__img">
+                        <img class="img__avatar-bot inactive" id="background-avatar" src="img/Gigachad.jpg" alt="">
+                    </div>
+                </div>
+                <div class="chat-container__user-history-message">
+                    <div class="user-history-message__field-chat" id="field-messages"></div>
+                </div>
+                <div class="chat-container__user-input-message">
+                    <input class="input-message" id="input-message" type="text" placeholder="Введите сообщение">
+                    <button class="button-send-message" id="button-send-message" disabled>
+                        <svg width="30" height="40" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 20 20">
+                            <path d="M0 0l20 10L0 20V0zm0 8v4l10-2L0 8z" fill="#8c5cff" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
