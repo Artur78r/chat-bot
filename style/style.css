@@ -245,6 +245,7 @@ input:checked[id="bot-switch"]:before {
 
 .input-message[placeholder]{
     font-size: 1.3em;
+    padding-left: 10px;
 }
 
 .button-send-message {
