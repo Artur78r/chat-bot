@@ -1,4 +1,34 @@
-* {
+:root{
+    --window-chat__background-image: url("../img/background.jpg");
+    --chat-container__box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.2);
+    --chat-container__border-radius: 20px;
+    --chat-container__bot-title__border-radius: 20px 0px 0px 0px;
+    --chat-container__user-heder__border-radius: 0px 20px 0px 0px;
+    --chat-container__user-input-message__border-radius: 0px 0px 20px 0px;
+    --chat-container__bot-menu__border-radius: 0px 0px 0px 20px;
+    --chat-container__bot-title__background-color: rgb(45, 39, 58, 0.8);
+    --chat-container__bot-title__border-bottom:solid 2px #372f48;
+    --chat-container__bot-title__backdrop-filter: blur(15px);
+    --bot-title__title__background-color: rgb(55, 47, 72, 0.7);
+    --bot-title__title__backdrop-filter: blur(15px);
+    --bot-title__title__color: #cecece;
+    --chat-container__bot-menu__background-color: rgb(45, 39, 58, 0.8);
+    --chat-container__bot-menu__backdrop-filter: blur(15px);
+    --input__checkbox__background: #c6c6c6; 
+    --input-checked__checkbox__background: #8c5cff;
+    --input-before__background: #ffffff;
+    --gigachad__name__color:#ffffff;
+    --chat-container__user-heder__background-color: white;
+    --chat-container__user-history-message__background-color: #f0f2f4;
+    --user-text__background-color: rgba(255, 255, 255, 0.7);
+    --user-text__color: #000000;
+    --bot-text__background-color: rgb(140, 92, 255, 0.7);
+    --bot-text__color: #ffffff;
+    --chat-container__user-input-message__background-color: white;
+    --button-send-message__disabled__svg_path_fill: gray;
+}
+
+*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -9,7 +39,7 @@ body,
 .window-chat {
     width: 100%;
     height: 100%;
-    background-image: url(/img/mountains_night_aerial_view_149736_1280x960.jpg);
+    background-image: var(--window-chat__background-image);
     background-size: cover;
 }
 
@@ -26,8 +56,8 @@ body,
     height: 100%;
     display: grid;
     grid-template-columns: 250px 650px;
-    box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.2);
-    border-radius: 20px 20px 20px 20px;
+    box-shadow: var(--chat-container__box-shadow);
+    border-radius: var(--chat-container__border-radius);
 }
 
 .chat-container__bot {
@@ -41,17 +71,16 @@ body,
     max-height: 100px;
     width: 100%;
     height: 100%;
-    border-bottom: solid 2px #372f48;
-    backdrop-filter: blur(15px);
+    border-bottom: var(--chat-container__bot-title__border-bottom);
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: rgb(45, 39, 58, 0.8);
-    backdrop-filter: blur(15px);
-    border-radius: 20px 0px 0px 0px;
+    background-color: var(--chat-container__bot-title__background-color);
+    backdrop-filter: var(--chat-container__bot-title__backdrop-filter);
+    border-radius: var(--chat-container__bot-title__border-radius);
 }
 
-.bot-title__title {
+.bot-title__title{
     border-radius: 40px;
     max-height: 50px;
     max-width: 200px;
@@ -60,18 +89,18 @@ body,
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: rgb(55, 47, 72, 0.7);
-    backdrop-filter: blur(15px);
-    color: #cecece;
+    background-color: var(--bot-title__title__background-color);
+    backdrop-filter: var( --bot-title__title__backdrop-filter);
+    color: var(--bot-title__title__color)
 }
 
 .chat-container__bot-menu {
     max-height: 500px;
     width: 100%;
     height: 100%;
-    background-color: rgb(45, 39, 58, 0.8);
-    backdrop-filter: blur(15px);
-    border-radius: 0px 0px 0px 20px;
+    background-color: var( --chat-container__bot-menu__background-color);
+    backdrop-filter: var(--chat-container__bot-menu__backdrop-filter);
+    border-radius: var( --chat-container__bot-menu__border-radius); 
 }
 
 .bot-menu__gigachad {
@@ -99,15 +128,15 @@ input[id="bot-switch"] {
     height: 15px;
     appearance: none;
     outline: none;
-    background: #c6c6c6;
+    background: var(--input__checkbox__background );
     border-radius: 20px;
     transition: .5s;
     box-shadow: inset 0 0 5px rgba(0, 0, 0, .2);
     cursor: pointer;
 }
-
+ 
 input:checked[id="bot-switch"] {
-    background: #8c5cff;
+    background: var(--input-checked__checkbox__background)
 }
 
 input[id="bot-switch"]:before {
@@ -116,7 +145,7 @@ input[id="bot-switch"]:before {
     width: 15px;
     height: 15px;
     border-radius: 15px;
-    background: #fff;
+    background: var(--input-before__background);
     transition: .5s;
     transform: scale(1.1);
     box-shadow: 0 2px 5px rgba(0, 0, 0, .2);
@@ -142,15 +171,15 @@ input:checked[id="bot-switch"]:before {
 
 .gigachad__name {
     width: 100%;
-    color: #ffffff;
+    color: var(--gigachad__name__color);
 }
 
 .chat-container__user-heder {
-    background-color: white;
+    background-color: var( --chat-container__user-heder__background-color);
     max-height: 100px;
     height: 100%;
     display: flex;
-    border-radius: 0px 20px 0px 0px;
+    border-radius: var(--chat-container__user-heder__border-radius);
 }
 
 .user-heder__img {
@@ -182,7 +211,7 @@ input:checked[id="bot-switch"]:before {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #f0f2f4;
+    background-color: var(--chat-container__user-history-message__background-color);
 }
 
 .user-history-message__field-chat {
@@ -203,8 +232,8 @@ input:checked[id="bot-switch"]:before {
     margin-left: auto;
     margin-right: 0;
     width: fit-content;
-    background-color: rgba(255, 255, 255, 0.7);
-    color: #000000;
+    background-color: var(--user-text__background-color);
+    color: var( --user-text__color);
     border-radius: 10px 20px 0px 10px;
 }
 
@@ -218,8 +247,8 @@ input:checked[id="bot-switch"]:before {
     padding: 5px 15px;
     margin-bottom: 8px;
     font-size: 1.3em;
-    background-color: rgb(140, 92, 255, 0.7);
-    color: #ffffff;
+    background-color: var(--bot-text__background-color);
+    color: var(--bot-text__color);
     border-radius: 0px 10px 10px 20px;
     width: max-content;
 }
@@ -229,11 +258,11 @@ input:checked[id="bot-switch"]:before {
 }
 
 .chat-container__user-input-message {
-    background-color: white;
+    background-color:var(--chat-container__user-input-message__background-color);
     height: 50px;
     display: flex;
     justify-content: center;
-    border-radius: 0px 0px 20px 0px;
+    border-radius: var(--chat-container__user-input-message__border-radius);
 }
 
 .input-message {
@@ -256,5 +285,5 @@ input:checked[id="bot-switch"]:before {
 }
 
 #button-send-message[disabled] svg path {
-    fill: gray;
+    fill: var(--button-send-message__disabled__svg_path_fill);
 }

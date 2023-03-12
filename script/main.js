@@ -2,14 +2,25 @@ window.onload = function () {
 
     const buttonSendMessage = document.getElementById('button-send-message');
     const inputMessage = document.getElementById('input-message');
-    const fieldForRecordingMessages = document.getElementById('field-messages');
+    const chat = document.getElementById('field-messages');
     const botSwitch = document.getElementById('bot-switch');
-    const AvatarImgSwitch = document.getElementById('background-avatar');
+    const AvatarImg = document.getElementById('background-avatar');
     let isCheckboxChecked = false;
 
-    const arrayWord = ["Очень интересно", "Расскажи еще что нибудь", "Продолжай не останавливайся", "Ты прирожден писать, ударение поставь сам", "Рад видеть твои сообщения", "Вот как", "Поговорим", "Совсем тебе скучно", "Даже не знаю, что на это ответить", "Понятно", "Ясно", "хаха"];
+    const arrayWord = ["Очень интересно", 
+    "Расскажи еще что нибудь", 
+    "Продолжай не останавливайся", 
+    "Ты прирожден писать, ударение поставь сам", 
+    "Рад видеть твои сообщения", 
+    "Вот как", 
+    "Поговорим", 
+    "Совсем тебе скучно", 
+    "Даже не знаю, что на это ответить", 
+    "Понятно", 
+    "Ясно", 
+    "хаха"];
 
-    const classNameMessages = {
+    const classNamesMessages = {
         USER_TEXT: "user-text",
         USER_TIMESTAMP: "user-timestamp",
         BOT_TEXT: "bot-text",
@@ -37,7 +48,7 @@ window.onload = function () {
 
     function createUserMessage() {
         const messageContainer = createDiv();
-        messageContainer.className = classNameMessages.USER_TEXT;
+        messageContainer.className = classNamesMessages.USER_TEXT;
         messageContainer.innerHTML = inputMessage.value;
         appendTimestampToUserMessage(messageContainer);
         return messageContainer;
@@ -45,18 +56,18 @@ window.onload = function () {
 
     function appendTimestampToUserMessage(message) {
         const timestampContainer = createDiv();
-        timestampContainer.className = classNameMessages.USER_TIMESTAMP;
+        timestampContainer.className = classNamesMessages.USER_TIMESTAMP;
         timestampContainer.innerHTML = createTimestamp();
         message.append(timestampContainer);
     }
 
     function sendUserMessage() {
-        fieldForRecordingMessages.append(createUserMessage());
+        chat.append(createUserMessage());
     }
 
     function createBotMessage() {
         const messageContainer = createDiv();
-        messageContainer.className = classNameMessages.BOT_TEXT;
+        messageContainer.className = classNamesMessages.BOT_TEXT;
         messageContainer.innerHTML = selectRandomWord();
         appendTimestampToBotMessage(messageContainer);
         return messageContainer;
@@ -64,17 +75,17 @@ window.onload = function () {
 
     function appendTimestampToBotMessage(message) {
         const timestamp = createDiv();
-        timestamp.className = classNameMessages.BOT_TIMESTAMP;
+        timestamp.className = classNamesMessages.BOT_TIMESTAMP;
         timestamp.innerHTML = createTimestamp();
         message.append(timestamp);
     }
 
     function sendBotMessage() {
-        fieldForRecordingMessages.append(createBotMessage());
+        chat.append(createBotMessage());
     }
 
     function scrollpage() {
-        fieldForRecordingMessages.scrollBy({ top: 1000, left: 0, behavior: 'smooth' });
+        chat.scrollBy({ top: 1000, left: 0, behavior: 'smooth' });
     }
 
     function isInputEmpty() {
@@ -93,10 +104,10 @@ window.onload = function () {
     function switchAvatar() {
         if (isCheckboxChecked === true) {
 
-            AvatarImgSwitch.classList.remove(objectWitchClassName.INACTIVE);
+            AvatarImg.classList.remove(objectWitchClassName.INACTIVE);
         }
         else {
-            AvatarImgSwitch.classList.add(objectWitchClassName.INACTIVE);
+            AvatarImg.classList.add(objectWitchClassName.INACTIVE);
         }
     }
 
