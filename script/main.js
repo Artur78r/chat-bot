@@ -45,16 +45,18 @@ window.onload = function () {
         return document.createElement("div");
     }
 
-    function createMessage() {
+    function createMessageUser() {
         const messageContainer = createDiv();
-        if (isCheckboxChecked) {
-            messageContainer.className = classNamesMessages.BOT_MESSAGES;
-            messageContainer.innerHTML = selectRandomWord();
-        }
-        else {
-            messageContainer.className = classNamesMessages.USER_MESSAGES;
-            messageContainer.innerHTML = inputMessage.value;
-        }
+        messageContainer.className = classNamesMessages.USER_MESSAGES;
+        messageContainer.innerHTML = inputMessage.value;
+        appendTimestamp(messageContainer);
+        return messageContainer;
+    }
+
+    function createMessageBot (){
+        const messageContainer = createDiv();
+        messageContainer.className = classNamesMessages.BOT_MESSAGES;
+        messageContainer.innerHTML = selectRandomWord();
         appendTimestamp(messageContainer);
         return messageContainer;
     }
@@ -67,7 +69,10 @@ window.onload = function () {
     }
 
     function sendMessage() {
-        chat.append(createMessage());
+        if(isCheckboxChecked){
+            chat.append(createMessageBot());
+        }
+        chat.append(createMessageUser());
     }
 
     function switchAvatar() {
