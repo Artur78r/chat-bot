@@ -69,10 +69,10 @@ window.onload = function () {
     }
 
     function sendMessage() {
+        chat.append(createMessageUser());
         if(isCheckboxChecked){
             chat.append(createMessageBot());
         }
-        chat.append(createMessageUser());
     }
 
     function switchAvatar() {
